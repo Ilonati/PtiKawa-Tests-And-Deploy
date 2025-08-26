@@ -9,9 +9,13 @@ function calculateOrderPrice(items) {
   return items.reduce((total, item) => {
     if (typeof item.price === 'number' && item.price >= 0) {
       return total + item.price;
+    } else {
+      return res.status(400).json({ error: result.error });
+
     }
-    return total;
+
   }, 0);
+
 }
 
 /**
